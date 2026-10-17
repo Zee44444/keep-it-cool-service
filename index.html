@@ -3,212 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keep It Cool Service - Air Conditioning Solutions</title>
+    <title>Keep It Cool Service Ltd - Air Conditioning & Refrigeration London</title>
     <style>
         :root {
-            --primary: #2b6cb0;
-            --primary-dark: #1a4971;
-            --light-bg: #f7fafc;
-            --card-bg: #edf2f7;
-            --text-main: #2d3748;
-            --text-muted: #4a5568;
-            --white: #ffffff;
+            --primary: #1e40af;
+            --secondary: #dc2626;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray-bg: #e2e8f0;
+            --text: #334155;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         body {
-            color: var(--text-main);
-            background-color: var(--white);
+            color: var(--text);
+            background-color: var(--light);
             line-height: 1.6;
         }
 
-        header {
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--dark);
+            color: #ffffff;
+            padding: 8px 5%;
+            font-size: 0.9rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.25rem 5%;
-            background: var(--white);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+        }
+
+        .top-bar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Header */
+        header {
+            background-color: #ffffff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
-        .logo {
-            font-size: 1.35rem;
-            font-weight: 700;
+        .logo-title {
+            font-size: 1.5rem;
+            font-weight: bold;
             color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        nav a:hover {
-            color: var(--primary);
+        .logo-title span {
+            color: var(--secondary);
         }
 
         .btn-call {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 0.6rem 1.4rem;
-            border-radius: 6px;
+            background-color: var(--secondary);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
             text-decoration: none;
-            font-weight: 600;
-            transition: background 0.2s;
+            font-weight: bold;
+            font-size: 1.1rem;
         }
 
-        .btn-call:hover {
-            background-color: var(--primary-dark);
-        }
-
-        .services-section {
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            color: #ffffff;
             padding: 4rem 5%;
-            max-width: 1200px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem auto;
+            color: #cbd5e1;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        /* Services Section */
+        .section {
+            padding: 3rem 5%;
+            max-width: 1100px;
             margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 2rem;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
-            margin-top: 2rem;
         }
 
-        .service-card {
-            background: var(--card-bg);
-            padding: 2rem;
+        .card {
+            background: #ffffff;
+            border: 2px solid var(--gray-bg);
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            text-align: left;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        .service-card p {
-            color: var(--text-muted);
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Offerings & Qualifications */
+        .features-list {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .features-list ul {
+            list-style-type: none;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            font-size: 1.1rem;
+            border-bottom: 1px solid var(--gray-bg);
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .qualifications {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+            font-weight: bold;
+            color: var(--dark);
+        }
+
+        .qual-item {
+            background-color: var(--gray-bg);
+            padding: 8px 14px;
+            border-radius: 4px;
             font-size: 0.95rem;
         }
 
-        .contact-banner {
-            background-color: var(--card-bg);
-            padding: 4rem 5%;
+        /* Contact Box */
+        .contact-box {
+            background-color: var(--dark);
+            color: #ffffff;
+            padding: 3rem 5%;
             text-align: center;
             margin-top: 3rem;
         }
 
-        .contact-banner h2 {
+        .contact-box h2 {
+            margin-bottom: 1rem;
             font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-main);
         }
 
-        .contact-banner .subtitle {
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            font-size: 1rem;
+        .contact-info {
+            font-size: 1.2rem;
+            margin-top: 1rem;
         }
 
-        .contact-info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-            max-width: 900px;
-            margin: 0 auto;
+        .contact-info p {
+            margin: 8px 0;
         }
 
-        .info-item h3 {
-            color: var(--primary);
-            font-size: 1.1rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .info-item p {
-            color: var(--text-main);
-            font-weight: 500;
+        .contact-info a {
+            color: #60a5fa;
+            text-decoration: none;
         }
 
         footer {
+            background-color: #020617;
+            color: #94a3b8;
             text-align: center;
             padding: 1.5rem;
-            background-color: #1a202c;
-            color: #a0aec0;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
-        @media (max-width: 768px) {
-            nav {
-                display: none;
-            }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.6rem; }
+            .top-bar { text-align: center; justify-content: center; gap: 10px; }
         }
     </style>
 </head>
 <body>
 
+    <div class="top-bar">
+        <div>📍 Covering all of London area (Residential & Commercial)</div>
+        <div>📞 Call Today: <a href="tel:07908310085">07908310085</a></div>
+    </div>
+
     <header>
-        <div class="logo">
-            ⚙️ Keep It Cool Service
+        <div class="logo-title">
+            Keep It <span>Cool</span> Service Ltd
         </div>
-        <nav>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <a href="tel:07000000000" class="btn-call">Call Now</a>
-        </nav>
+        <a href="tel:07908310085" class="btn-call">Call Now</a>
     </header>
 
-    <section id="services" class="services-section">
+    <section class="hero">
+        <div class="badge">14 Years of Experience</div>
+        <h1>Air Conditioning & Refrigeration Specialist</h1>
+        <p>An Air Conditioning specialist company based in London. We specialise in providing comfortable, cost-effective Air Conditioning and Refrigeration solutions across London, UK.</p>
+        <p>Our highly trained technicians quickly and effectively install, repair, and maintain systems tailored to you and your budget.</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Our Specialist Services</h2>
         <div class="services-grid">
-            <div class="service-card">
-                <p>Quick diagnostics and repairs for all air conditioning brands and models to keep you cool when it matters most.</p>
+            <div class="card">
+                <h3>❄️ AC Installation</h3>
+                <p>Expert installation of modern, energy-efficient air conditioning units for homes and businesses.</p>
             </div>
-            <div class="service-card">
-                <p>Upgrading your system? We install energy-efficient cooling unit systems tailored to your home's layout.</p>
+            <div class="card">
+                <h3>🛠️ AC Repair</h3>
+                <p>Fast diagnostics and reliable repair services to get your cooling back up and running.</p>
             </div>
-            <div class="service-card">
-                <p>Prevent breakdowns and extend unit lifespan with our routine inspection and tune-up plans.</p>
+            <div class="card">
+                <h3>⚙️ Maintenance</h3>
+                <p>Routine service and maintenance plans to extend unit lifespan and prevent unexpected breakdowns.</p>
+            </div>
+            <div class="card">
+                <h3>🧊 Refrigeration</h3>
+                <p>Professional commercial and residential refrigeration service and maintenance solutions.</p>
+            </div>
+        </div>
+
+        <div class="features-list">
+            <h3 style="color: var(--primary); margin-bottom: 1rem;">We are proud that we offer:</h3>
+            <ul>
+                <li>✅ Guarantee quality services</li>
+                <li>✅ Competitive & clear pricing</li>
+                <li>✅ On-time services</li>
+                <li>✅ Happy to help</li>
+                <li>✅ Lead Engineer: Mr Zed</li>
+            </ul>
+
+            <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--dark);">Certifications & Qualifications:</h4>
+            <div class="qualifications">
+                <div class="qual-item">F-Gas Certified</div>
+                <div class="qual-item">City & Guilds Qualified</div>
+                <div class="qual-item">SKILLcard</div>
+                <div class="qual-item">REFCOM Certified</div>
+                <div class="qual-item">ACRIB Member</div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-banner">
-        <h2>Ready to Keep It Cool?</h2>
-        <p class="subtitle">Contact us today for a free quote or to schedule a service technician.</p>
-
-        <div class="contact-info-grid">
-            <div class="info-item">
-                <h3>Phone</h3>
-                <p>07000 000000</p>
-            </div>
-            <div class="info-item">
-                <h3>Email</h3>
-                <p>info@keepitcoolservice.com</p>
-            </div>
-            <div class="info-item">
-                <h3>Service Area</h3>
-                <p>United Kingdom</p>
-            </div>
+    <section class="contact-box">
+        <h2>Call or email us today to discuss your needs</h2>
+        <div class="contact-info">
+            <p><strong>Phone:</strong> <a href="tel:07908310085">07908310085</a></p>
+            <p><strong>Email:</strong> <a href="mailto:keepitcoolltd@hotmail.com">keepitcoolltd@hotmail.com</a></p>
+            <p><strong>Website:</strong> <a href="http://www.keepitcoolservice.com">www.keepitcoolservice.com</a></p>
+            <p><strong>Coverage:</strong> London Area (Residential & Commercial)</p>
         </div>
     </section>
 
     <footer>
-        &copy; 2026 Keep It Cool Service. All rights reserved.
+        &copy; 2026 Keep It Cool Service Ltd. All rights reserved.
     </footer>
 
 </body>
